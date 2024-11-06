@@ -10,6 +10,15 @@ datasource db {
   url      = env("DB_URL")
 }
 
+model Role {
+  id          Int    @id @default(autoincrement())
+  name        String @unique
+  description String
+  users       User[]
+
+  @@map("roles")
+}
+
 model User {
   id        Int       @id @default(autoincrement())
   name      String
@@ -24,14 +33,6 @@ model User {
   @@map("users")
 }
 
-model Role {
-  id          Int    @id @default(autoincrement())
-  name        String @unique
-  description String
-  users       User[]
-
-  @@map("roles")
-}
 
 model Customer {
   id     Int  @id @default(autoincrement())
