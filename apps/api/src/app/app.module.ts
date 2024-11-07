@@ -6,12 +6,13 @@ import { AppService } from './app.service';
 import { PrismaModule } from 'nestjs-prisma';
 import { AuthModule } from './auth/auth.module';
 //import { CustomersModule } from './customers/customers.module';
+import { CustomersModule } from './customers/customers.module';
 
 @Module({
   imports: [
     PrismaModule,
     AuthModule,
-    //CustomersModule
+    CustomersModule,
   ],
   controllers: [AppController],
   providers: [
